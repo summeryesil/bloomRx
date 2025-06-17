@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Telehealth Clinic</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to Your Online Clinic</h1>
+  <p>Accessible, affordable care from a licensed provider.</p>
+
+  <h2>Patient Intake Form</h2>
+
+  <form action="/submit-intake" method="POST">
+    <!-- Patient Info -->
+    <label>Full Name:</label>
+    <input type="text" name="full_name" required>
+
+    <label>Date of Birth:</label>
+    <input type="date" name="dob" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <label>Phone Number:</label>
+    <input type="tel" name="phone" required>
+
+    <label>State of Residence:</label>
+    <input type="text" name="state" required>
+
+    <!-- Services -->
+    <h3>What service are you requesting?</h3>
+    <label><input type="checkbox" name="services" value="Primary Care"> Primary Care (cold, fatigue, UTI)</label>
+    <label><input type="checkbox" name="services" value="Dermatology"> Dermatology (acne, hair loss, eczema)</label>
+    <label><input type="checkbox" name="services" value="Birth Control"> Birth Control</label>
+    <label><input type="checkbox" name="services" value="ED Treatment"> ED Treatment</label>
+    <label><input type="checkbox" name="services" value="STI Testing/Treatment"> STI Testing/Treatment</label>
+    <label><input type="checkbox" name="services" value="Prescription Refill"> Prescription Refill</label>
+
+    <!-- Medical History -->
+    <h3>Medical History</h3>
+    <label>Do you have any chronic medical conditions?</label>
+    <textarea name="chronic_conditions" rows="3"></textarea>
+
+    <label>List all current medications:</label>
+    <textarea name="current_medications" rows="3"></textarea>
+
+    <label>Do you have any allergies (medications, food, etc)?</label>
+    <textarea name="allergies" rows="2"></textarea>
+
+    <label>Do you smoke, vape, or use recreational drugs?</label>
+    <input type="text" name="substance_use">
+
+    <!-- Women’s Health -->
+    <label>If applicable, date of last menstrual period:</label>
+    <input type="date" name="last_period">
+
+    <label>Are you pregnant or breastfeeding?</label>
+    <select name="pregnancy_status">
+      <option value="">Select</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="N/A">N/A</option>
+    </select>
+
+    <!-- Notes -->
+    <label>Additional notes or concerns:</label>
+    <textarea name="notes" rows="3"></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>
